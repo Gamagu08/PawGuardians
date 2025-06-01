@@ -1,4 +1,4 @@
-![Image](https://github.com/user-attachments/assets/6675991e-d714-469e-b30c-f84a851c778c)
+![Image](https://github.com/user-attachments/assets/a4abd235-a095-4161-a463-6b129960bd20)
 
 # 🐾 PawGuardians – Skill Sharing DApp on Stellar Soroban
 
