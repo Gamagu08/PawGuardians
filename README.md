@@ -1,5 +1,5 @@
 <p align="center">
-![cat](https://github.com/user-attachments/assets/2094c047-8795-4929-b95a-67dc429e9c56)
+![PawGuardians Logo](frontend/public/logo.png)
 
   <img src="./frontend/public/logo.png" alt="PawGuardians Logo" width="150" />
 </p>
