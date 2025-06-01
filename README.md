@@ -1,9 +1,3 @@
-<p align="center">
-![PawGuardians Logo](frontend/public/logo.png)
-
-  <img src="./frontend/public/logo.png" alt="PawGuardians Logo" width="150" />
-</p>
-
 ![Image](https://github.com/user-attachments/assets/6675991e-d714-469e-b30c-f84a851c778c)
 
 # 🐾 PawGuardians – Skill Sharing DApp on Stellar Soroban
