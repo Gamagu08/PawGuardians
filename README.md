@@ -65,9 +65,7 @@ cargo build --target wasm32-unknown-unknown --release
 
 ## 📸 Screenshots
 
-> _You can place a screenshot in the `/screenshots/` folder and update the path below._
-
-![App Screenshot](./screenshots/pawguardians-preview.png)
+![Image](https://github.com/user-attachments/assets/c2056c48-e570-4857-a540-618a401ea255)
 
 ## 📄 License
 
