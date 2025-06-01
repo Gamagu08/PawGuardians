@@ -4,8 +4,9 @@
 
 # 🐾 PawGuardians – Skill Sharing DApp on Stellar Soroban
 
-**PawGuardians** is a decentralized skill-sharing application built using **Stellar Soroban**. Users can offer or learn skills (such as language, coding, or music) in exchange for **XLM** or through mutual skill exchange. It aims to create a decentralized, community-driven platform for global learning.
+**PawGuardians** is a decentralized tracking and funding application dedicated to supporting street animals. Users can select one of three different street animals listed in the system and make donations directly to the animal's dedicated aid pool smart contract.
 
+Volunteers can request payments from this fund only for verified needs (e.g., purchasing food, veterinary expenses, etc.), and proof such as documents, videos, or photos must be provided showing that the funds were used for the animal's care. The platform features a simple and modern interface where users can connect their wallet, choose an animal via image buttons, and support it by clicking the "Support" button. After connecting their wallet, users can select any animal they wish to help and make a donation.
 ## 🚀 Features
 
 - ✨ Decentralized skill exchange platform  
