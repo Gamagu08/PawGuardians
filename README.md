@@ -1,5 +1,7 @@
 ![Image](https://github.com/user-attachments/assets/6675991e-d714-469e-b30c-f84a851c778c)
 
+![Image](https://github.com/user-attachments/assets/a05c1992-b3b0-49cf-9a77-5e85175e8918)
+
 # 🐾 PawGuardians – Skill Sharing DApp on Stellar Soroban
 
 **PawGuardians** is a decentralized tracking and funding application dedicated to supporting street animals. Users can select one of three different street animals listed in the system and make donations directly to the animal's dedicated aid pool smart contract.
