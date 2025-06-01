@@ -1,6 +1,7 @@
 <p align="center">
+![cat](https://github.com/user-attachments/assets/2094c047-8795-4929-b95a-67dc429e9c56)
+
   <img src="./frontend/public/logo.png" alt="PawGuardians Logo" width="150" />
-![43f95b1b-02f2-4259-b0ee-cfb00e2e700c](https://github.com/user-attachments/assets/fc4521ee-dc36-4b3d-9be4-068e0d2a622d)
 </p>
 
 
