@@ -14,6 +14,10 @@ const nextConfig = {
     };
     return config;
   },
+  // Yeni eklenen kısım (TailwindCSS için)
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 module.exports = nextConfig;
