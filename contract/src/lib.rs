@@ -1,6 +1,6 @@
 #![no_std]
 use soroban_sdk::{
-    contract, contractimpl, contracttype, symbol_short,
+    contract, contractimpl, contracttype, contracterror, symbol_short,
     Address, Env, Map, String, Symbol, Vec, log
 };
 
@@ -56,8 +56,11 @@ pub enum DataKey {
     NextPaymentRequestId,
 }
 
+
+
 // Hata kodları
-#[contracttype]
+#[contracterror]
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum Error {
     NotAuthorized = 1,
     AnimalNotFound = 2,

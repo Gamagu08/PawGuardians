@@ -14,24 +14,24 @@ interface Animal {
 const animals: Animal[] = [
   {
     id: 1,
-    name: "Minnoş",
-    description: "Yaralı patiyi iyileşen sevimli kedi",
+    name: "Whiskers",
+    description: "Adorable cat recovering from injured paw",
     image: "/api/placeholder/300/200",
     raised: 250,
     target: 500,
   },
   {
     id: 2, 
-    name: "Karabaş",
-    description: "Soğuktan korunmaya muhtaç köpek",
+    name: "Shadow",
+    description: "Dog in need of protection from cold weather",
     image: "/api/placeholder/300/200", 
     raised: 180,
     target: 400,
   },
   {
     id: 3,
-    name: "Pamuk",
-    description: "Mama desteğine ihtiyacı olan genç kedi",
+    name: "Cotton",
+    description: "Young cat needing food support",
     image: "/api/placeholder/300/200",
     raised: 320,
     target: 600,
@@ -44,7 +44,7 @@ export default function Home() {
   const [donationAmount, setDonationAmount] = useState<string>("10");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Sayfa yüklendiğinde cüzdan bağlı mı kontrol et
+  // Check if wallet is connected when page loads
   useEffect(() => {
     const checkFreighter = async () => {
       try {
@@ -60,7 +60,7 @@ export default function Home() {
     checkFreighter();
   }, []);
 
-  // Cüzdan bağlantısı
+  // Wallet connection
   const handleConnectWallet = async () => {
     try {
       setIsLoading(true);
@@ -69,43 +69,43 @@ export default function Home() {
       setPublicKey(address);
     } catch (error) {
       console.error("Error connecting to Freighter:", error);
-      alert("Cüzdan bağlanırken hata oluştu!");
+      alert("Error occurred while connecting wallet!");
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Bağış yapma
+  // Make donation
   const handleDonate = async () => {
     if (!selectedAnimal || !publicKey) {
-      alert("Lütfen bir hayvan seçin ve cüzdanınızı bağlayın!");
+      alert("Please select an animal and connect your wallet!");
       return;
     }
 
     if (!donationAmount || parseFloat(donationAmount) <= 0) {
-      alert("Geçerli bir bağış miktarı girin!");
+      alert("Please enter a valid donation amount!");
       return;
     }
 
     try {
       setIsLoading(true);
       
-      // Burada Stellar/Soroban akıllı sözleşme çağrısı yapılacak
-      // Şimdilik simüle ediyoruz
-      console.log(`${selectedAnimal.name} için ${donationAmount} XLM bağış yapılıyor...`);
+      // Stellar/Soroban smart contract call will be made here
+      // For now, we're simulating it
+      console.log(`Donating ${donationAmount} XLM for ${selectedAnimal.name}...`);
       
-      // Simülasyon için 2 saniye bekle
+      // Wait 2 seconds for simulation
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      alert(`${selectedAnimal.name} için ${donationAmount} XLM bağışınız başarıyla yapıldı!`);
+      alert(`Your donation of ${donationAmount} XLM for ${selectedAnimal.name} was successful!`);
       
-      // Bağış sonrası durumu sıfırla
+      // Reset state after donation
       setSelectedAnimal(null);
       setDonationAmount("10");
       
     } catch (error) {
       console.error("Donation error:", error);
-      alert("Bağış yapılırken hata oluştu!");
+      alert("Error occurred while making donation!");
     } finally {
       setIsLoading(false);
     }
@@ -119,18 +119,18 @@ export default function Home() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <h1 className="text-3xl font-bold text-gray-900">
-                🐾 Sokak Dostları
+                🐾 PawGuardians
               </h1>
               <p className="ml-4 text-lg text-gray-600">
-                Merkeziyetsiz Hayvan Desteği
+                Decentralized Animal Support
               </p>
             </div>
             
-            {/* Cüzdan Bağlantısı */}
+            {/* Wallet Connection */}
             <div>
               {publicKey ? (
                 <div className="bg-green-100 text-green-800 px-4 py-2 rounded-lg">
-                  <p className="text-sm font-medium">Bağlı Cüzdan:</p>
+                  <p className="text-sm font-medium">Connected Wallet:</p>
                   <p className="text-xs font-mono">
                     {publicKey.slice(0, 8)}...{publicKey.slice(-8)}
                   </p>
@@ -144,11 +144,11 @@ export default function Home() {
                   {isLoading ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Bağlanıyor...
+                      Connecting...
                     </>
                   ) : (
                     <>
-                      🔗 Freighter Cüzdanını Bağla
+                      🔗 Connect Freighter Wallet
                     </>
                   )}
                 </button>
@@ -158,20 +158,20 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Ana İçerik */}
+      {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Açıklama */}
+        {/* Description */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Sokak Hayvanlarına Destek Ol
+            Support Stray Animals
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Blockchain teknolojisi ile şeffaf ve güvenli bir şekilde sokak hayvanlarına yardım et. 
-            Bağışların doğrudan yardım havuzuna gitmesini sağla.
+            Help stray animals transparently and securely with blockchain technology. 
+            Ensure your donations go directly to the aid pool.
           </p>
         </div>
 
-        {/* Hayvan Kartları */}
+        {/* Animal Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {animals.map((animal) => (
             <div
@@ -198,8 +198,8 @@ export default function Home() {
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex justify-between text-sm text-gray-600 mb-1">
-                    <span>Toplanan: {animal.raised} XLM</span>
-                    <span>Hedef: {animal.target} XLM</span>
+                    <span>Raised: {animal.raised} XLM</span>
+                    <span>Goal: {animal.target} XLM</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
                     <div 
@@ -208,14 +208,14 @@ export default function Home() {
                     ></div>
                   </div>
                   <p className="text-xs text-gray-500 mt-1">
-                    %{Math.round((animal.raised / animal.target) * 100)} tamamlandı
+                    {Math.round((animal.raised / animal.target) * 100)}% completed
                   </p>
                 </div>
 
                 {selectedAnimal?.id === animal.id && (
                   <div className="bg-blue-50 p-3 rounded-lg">
                     <p className="text-blue-800 font-medium text-sm">
-                      ✓ Seçildi - Bağış yapmak için aşağıdaki butonu kullanın
+                      ✓ Selected - Use the button below to donate
                     </p>
                   </div>
                 )}
@@ -224,30 +224,30 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Bağış Alanı */}
+        {/* Donation Area */}
         {publicKey && (
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Bağış Yap
+              Make a Donation
             </h3>
             
             {selectedAnimal ? (
               <div className="mb-4 p-4 bg-green-50 rounded-lg">
                 <p className="text-green-800 font-medium">
-                  Seçilen Hayvan: <strong>{selectedAnimal.name}</strong>
+                  Selected Animal: <strong>{selectedAnimal.name}</strong>
                 </p>
               </div>
             ) : (
               <div className="mb-4 p-4 bg-yellow-50 rounded-lg">
                 <p className="text-yellow-800">
-                  Lütfen yukarıdan bir hayvan seçin
+                  Please select an animal from above
                 </p>
               </div>
             )}
 
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Bağış Miktarı (XLM)
+                Donation Amount (XLM)
               </label>
               <input
                 type="number"
@@ -256,7 +256,7 @@ export default function Home() {
                 min="1"
                 step="0.1"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Bağış miktarını girin"
+                placeholder="Enter donation amount"
               />
             </div>
 
@@ -268,11 +268,11 @@ export default function Home() {
               {isLoading ? (
                 <>
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  İşlem Yapılıyor...
+                  Processing...
                 </>
               ) : (
                 <>
-                  ❤️ Destekle ({donationAmount} XLM)
+                  ❤️ Support ({donationAmount} XLM)
                 </>
               )}
             </button>
@@ -283,7 +283,7 @@ export default function Home() {
           <div className="text-center">
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 max-w-md mx-auto">
               <p className="text-yellow-800 font-medium">
-                Bağış yapmak için lütfen cüzdanınızı bağlayın
+                Please connect your wallet to make a donation
               </p>
             </div>
           </div>
@@ -294,10 +294,10 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg">
-            Stellar & Soroban ile güçlendirilmiştir 🌟
+            Powered by Stellar & Soroban 🌟
           </p>
           <p className="text-gray-400 mt-2">
-            Merkeziyetsiz, şeffaf ve güvenli hayvan yardım platformu
+            Decentralized, transparent and secure animal support platform
           </p>
         </div>
       </footer>

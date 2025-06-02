@@ -10,27 +10,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "🐱 Sokak Dostları 🐶 - Merkeziyetsiz Hayvan Desteği",
-  description: "Stellar & Soroban blockchain teknolojisiyle güçlendirilmiş sokak hayvanları destek platformu. Şeffaf bağışlar, gerçek zamanlı takip ve merkeziyetsiz yönetim.",
+  title: "🐱 PawGuardians 🐶 - Decentralized Animal Support",
+  description: "Stray animal support platform powered by Stellar & Soroban blockchain technology. Transparent donations, real-time tracking and decentralized management.",
   keywords: [
     "blockchain", 
     "stellar", 
     "soroban", 
-    "hayvan hakları", 
-    "bağış", 
-    "merkeziyetsiz",
-    "sokak hayvanları",
-    "kedi",
-    "köpek",
-    "hayvan refahı",
-    "kripto bağış",
-    "şeffaf bağış"
+    "animal rights", 
+    "donation", 
+    "decentralized",
+    "stray animals",
+    "cat",
+    "dog",
+    "animal welfare",
+    "crypto donation",
+    "transparent donation"
   ].join(", "),
   authors: [
-    { name: "Sokak Dostları Ekibi", url: "https://sokakdostlari.com" }
+    { name: "PawGuardians Team", url: "https://pawguardians.com" }
   ],
-  creator: "Sokak Dostları Ekibi",
-  publisher: "Sokak Dostları Platform",
+  creator: "PawGuardians Team",
+  publisher: "PawGuardians Platform",
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -50,26 +50,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'tr_TR',
-    url: 'https://sokakdostlari.com',
-    title: '🐱 Sokak Dostları 🐶 - Blockchain ile Hayvan Desteği',
-    description: 'Stellar blockchain üzerinde şeffaf ve güvenilir sokak hayvanları destek platformu',
-    siteName: 'Sokak Dostları',
+    locale: 'en_US',
+    url: 'https://pawguardians.com',
+    title: '🐱 PawGuardians 🐶 - Animal Support with Blockchain',
+    description: 'Transparent and reliable stray animal support platform on Stellar blockchain',
+    siteName: 'PawGuardians',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Sokak Dostları - Blockchain Hayvan Destek Platformu',
+        alt: 'PawGuardians - Blockchain Animal Support Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '🐱 Sokak Dostları 🐶 - Blockchain Hayvan Desteği',
-    description: 'Stellar blockchain ile şeffaf sokak hayvanları destek platformu',
+    title: '🐱 PawGuardians 🐶 - Blockchain Animal Support',
+    description: 'Transparent stray animal support platform with Stellar blockchain',
     images: ['/twitter-image.jpg'],
-    creator: '@sokakdostlari',
+    creator: '@pawguardians',
   },
   icons: {
     icon: [
@@ -90,10 +90,10 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://sokakdostlari.com',
+    canonical: 'https://pawguardians.com',
     languages: {
-      'tr-TR': 'https://sokakdostlari.com',
-      'en-US': 'https://sokakdostlari.com/en',
+      'en-US': 'https://pawguardians.com',
+      'tr-TR': 'https://pawguardians.com/tr',
     },
   },
   category: 'technology',
@@ -110,7 +110,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -124,7 +124,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#8b5cf6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="🐱 Sokak Dostları 🐶" />
+        <meta name="apple-mobile-web-app-title" content="🐱 PawGuardians 🐶" />
         
         {/* Security headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
@@ -224,20 +224,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Sokak Dostları",
-              "alternateName": "Street Friends",
-              "url": "https://sokakdostlari.com",
-              "logo": "https://sokakdostlari.com/logo.png",
-              "description": "Stellar blockchain üzerinde şeffaf sokak hayvanları destek platformu",
+              "name": "PawGuardians",
+              "alternateName": "Paw Guardians",
+              "url": "https://pawguardians.com",
+              "logo": "https://pawguardians.com/logo.png",
+              "description": "Transparent stray animal support platform on Stellar blockchain",
               "foundingDate": "2024",
               "sameAs": [
-                "https://twitter.com/sokakdostlari",
-                "https://github.com/sokakdostlari"
+                "https://twitter.com/pawguardians",
+                "https://github.com/pawguardians"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "email": "info@sokakdostlari.com"
+                "email": "info@pawguardians.com"
               }
             })
           }}
@@ -249,7 +249,7 @@ export default function RootLayout({
           href="#main-content" 
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-yellow-400 text-purple-900 px-4 py-2 rounded-lg font-medium z-50"
         >
-          Ana içeriğe geç
+          Skip to main content
         </a>
         
         {/* Loading indicator */}
@@ -277,8 +277,8 @@ export default function RootLayout({
               });
               
               // Enhanced console message for developers
-              console.log('🐱 Sokak Dostları 🐶 - Blockchain ile hayvan dostu gelecek! 🌟');
-              console.log('GitHub: https://github.com/sokakdostlari');
+              console.log('🐱 PawGuardians 🐶 - Animal-friendly future with blockchain! 🌟');
+              console.log('GitHub: https://github.com/pawguardians');
               console.log('Built with ❤️ for street animals');
             `
           }}
